@@ -1,0 +1,134 @@
+:root {
+  /* Colors */
+  --color-primary: #4F46E5; /* Indigo/Purple */
+  --color-primary-hover: #4338CA;
+  --color-bg-dark: #111827; /* Dark sidebar */
+  --color-bg-card: #1F2937; /* Slightly lighter for cards in dark mode */
+  --color-bg-light: #F9FAFB; /* Main content area */
+  --color-text-main: #111827; /* Dark text on light bg */
+  --color-text-muted: #6B7280;
+  --color-text-inverse: #FFFFFF; /* White text on dark bg */
+  
+  /* Status Colors */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+
+  /* Typography */
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Borders & Shadows */
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Basic utility classes for layout */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.w-full { width: 100%; }
+.h-screen { height: 100vh; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #D1D5DB;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-family-sans);
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* Layout app */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  background-color: var(--color-bg-light);
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+/* Cards */
+.card {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #ticket-printable, #ticket-printable * {
+    visibility: visible;
+  }
+  #ticket-printable {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 320px;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

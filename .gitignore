@@ -1,0 +1,29 @@
+# =========================
+# Backend (.NET / C#)
+# =========================
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+appsettings.Development.json
+
+# =========================
+# Frontend (Node / React / Vite)
+# =========================
+node_modules/
+dist/
+dist-ssr/
+build/
+.env
+.env.*
+!.env.example
+.npm/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
